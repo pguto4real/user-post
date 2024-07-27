@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="index.css">
+  <script src="index.js" defer></script>
   <title>User Posts</title>
 </head>
 
@@ -13,7 +14,7 @@
   <div class="container">
     <div class="row">
       <div class="user-list">
-        <div class="user">
+        <div class="user" onclick="ShowUserPost(userId)">
           <div class="user-card">
             <div class="user-card__container">
               <h3>User's Name</h4>
@@ -27,6 +28,6 @@
     </div>
   </div>
 </body>
-<script src="index.js"></script>
+
 
 </html>
