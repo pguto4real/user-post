@@ -1,13 +1,9 @@
+const userId = localStorage.getItem('userId')
+const postWrapper = document.querySelector('.post-list');
 
-
-async function main() {
-
-    userId = localStorage.getItem('userId')
-
-    const postWrapper = document.querySelector('.post-list');
+async function main(userId) {
 
     const postData = await fetch("https://jsonplaceholder.typicode.com/posts?userId=" + userId)
-
     const usersPostData = await postData.json()
 
     const postHTML = usersPostData.map((element) => userPostData(element)).join("")
@@ -15,7 +11,7 @@ async function main() {
     postWrapper.innerHTML = postHTML
     console.log(usersPostData)
 }
-main()
+main(userId)
 
 function userPostData(data) {
     return `  
@@ -28,4 +24,10 @@ function userPostData(data) {
                 </p>
             </div>
   `
+}
+
+async function onSearchChange(event) {
+
+    const userId = event.target.value
+    main(userId)
 }

@@ -16,7 +16,8 @@ async function main(){
 
  function ShowUserPost(userId){
     localStorage.setItem("userId",userId)
-    window.location.href = `${window.location.origin}/user.html`
+    window.open(`${window.location.origin}/user.html`, "_self")
+    // window.location.href = `${window.location.origin}/user.html`
 }
 
 main()
