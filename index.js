@@ -14,15 +14,9 @@ async function main(){
     userWrapper.innerHTML = userHTML
 }
 
-async function ShowUserPost(userId){
+ function ShowUserPost(userId){
     localStorage.setItem("userId",userId)
     window.location.href = `${window.location.origin}/user.html`
-  const postLink = "https://jsonplaceholder.typicode.com/posts?userId="+userId
-  console.log(postLink)
-const usersPost = await fetch(postLink)
-console.log(usersPost)
-const usersPostData = await usersPost.json()
-console.log(usersPostData)
 }
 
 main()
